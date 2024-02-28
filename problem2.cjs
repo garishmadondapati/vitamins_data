@@ -3,8 +3,18 @@
  let itemsData = require("./itemsData.cjs");
 
  function getItemsContainingVitaminC(data){
-    return data.filter(item => item.contains === "Vitamin C");
- }
+   let items=data.reduce((acc,cv)=>{
+      if(cv.contains.includes("Vitamin C")){
+          acc.push(cv.name);
+      }
+      return acc;
+
+  },[]);
+
+  return items;
+}
+
+ 
 
  console.log(getItemsContainingVitaminC(itemsData));
 
