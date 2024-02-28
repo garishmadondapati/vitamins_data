@@ -1,11 +1,14 @@
-//1.Get all items that are available 
+//1.Get all items that are available
 
 let itemsData = require("./itemsData.cjs");
 
-function allItemsThatAreAvailable(data){
-    return data.filter(item=>item.available);
+function allItems(array){
+    let all_items=array.map((element)=>{
+        return element.name;
+    })
+
+    return all_items;
 }
+console.log(allItems(itemsData))
 
-console.log(allItemsThatAreAvailable(itemsData))
-
-module.exports=allItemsThatAreAvailable
+module.exports=allItems
